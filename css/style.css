@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', KaiTi;
+}
+
+/*root选择器声明css全局变量，变量作属性值而非属性名，用var()调用*/
+:root {
+    --mainColor: #2315e7c0;
+    --whiteColor: #ffffff;
+    --titleColor: #555555;
+    --labelColor: #333333;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    /*锚点平滑滚动*/
+}
+
+body {
+    background: linear-gradient(to right, #19c5f0d1, var(--mainColor));
+    /*var()函数调用根选择器里声明的全局变量*/
+    font-weight: 400;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+    /*原本作用为溢出隐藏；在这里解决外边距塌陷（如果给子元素添加margin-top样式）；还可以清除浮动*/
+}
+
+.wrapper {
+    position: relative;
+    width: 35rem;
+    height: 50rem;
+}
+
+/*利用媒体查询实现响应式布局*/
+@media(min-width:540px) {
+    .wrapper {
+        width: 40rem;
+    }
+}
+
+.wrapper .form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    /*flex弹性格子布局*/
+    align-items: center;
+    /*一列子元素在Y轴居中对齐*/
+    justify-content: center;
+    /*一行子元素在X轴居中对齐*/
+    width: 100%;
+    height: 100%;
+    background-color: var(--whiteColor);
+    border-radius: .5rem;
+    /*圆角边框*/
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    /*阴影*/
+}
+
+.wrapper .form-container form h2 {
+    font-size: 3rem;
+    text-align: center;
+    /*居中*/
+    color: var(--titleColor);
+}
+
+.wrapper .form-container form .form-group {
+    position: relative;
+    width: 32rem;
+    margin: 3rem 0;
+}
+
+/*实现点击输入操作框，提示图标文字上移至边框*/
+.wrapper .form-container form .form-group i,
+.wrapper .form-container form .form-group label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /*位移属性*/
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    color: var(--labelColor);
+    padding: 0 .5rem;
+    pointer-events: none;
+    /*元素不会成为鼠标事件的target*/
+    transition: all .5s ease;
+    /*属性过渡（数值，颜色，变形）*/
+}
+
+.wrapper .form-container form .form-group i {
+    left: .5rem;
+}
+
+.wrapper .form-container form .form-group label {
+    left: 2.5rem
+}
+
+.wrapper .form-container form .form-group input {
+    width: 100%;
+    height: 4rem;
+    padding: 0 1rem;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    border: .1rem solid var(--labelColor);
+    font-size: 1.6rem;
+    color: var(--labelColor);
+    background: transparent;
+    /*背景无颜色*/
+}
+
+form .form-group input:focus~label,
+form .form-group input:valid~label,
+form .form-group input:focus~i,
+form .form-group input:valid~i {
+    top: 0 !important;
+    /*！important 增加样式权重，此声明将覆盖任何其他声明*/
+    font-size: 1.2rem !important;
+    background-color: var(--whiteColor);
+}
+
+.wrapper .form-container form .forgot-pass {
+    margin: -1.5rem 0 1.5rem;
+}
+
+.wrapper .form-container form .forgot-pass a {
+    color: var(--labelColor);
+    text-decoration: none;
+    font-size: 1.4rem;
+    transform: all .5s ease;
+}
+
+/*链接属性——悬停改变颜色*/
+.wrapper .form-container form .forgot-pass a:hover {
+    color: var(--mainColor);
+}
+
+/*链接属性——鼠标点击设置下划线*/
+.wrapper .form-container form .forgot-pass a:active {
+    text-decoration: underline;
+}
+
+/*设置按钮样式*/
+.wrapper .form-container form .btn {
+    background: linear-gradient(to right, #de64ceb2, var(--mainColor));
+    color: var(--whiteColor);
+    text-transform: capitalize;
+    width: 100%;
+    height: 4rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    box-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.wrapper .form-container form .link {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--labelColor);
+    margin: 2.5rem 0;
+}
+
+/*链接属性——未被访问链接*/
+.wrapper .form-container form .link a {
+    text-transform: capitalize;
+    color: var(--mainColor);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .5s ease;
+}
+
+/*链接属性——悬停*/
+.wrapper .form-container form .link a:hover {
+    color: #da4453;
+}
+
+/*链接属性——鼠标点击设置下划线*/
+.wrapper .form-container form .link a:active {
+    text-decoration: underline;
+}
+
+.wrapper .sign-up {
+    transform: rotate(7deg);
+}
+
+.wrapper.animated-signin .form-container.sign-in {
+    animation: signin-flip 1s ease-in-out forwards;
+}
+
+/*@keyframes创建动画，实现登录和注册页面的滑动*/
+@keyframes signin-flip {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-50rem) scale(1.1);
+    }
+
+    100% {
+        transform: translateX(0) rotate(7deg) scale(1);
+    }
+}
+
+.wrapper.animated-signin .form-container.sign-up {
+    animation: rotatecard .7s ease-in-out forwards;
+    animation-delay: .3s;
+}
+
+@keyframes rotatecard {
+    0% {
+        transform: rotate(7deg);
+    }
+
+    100% {
+        transform: rotate(0);
+        z-index: 1;
+    }
+}
+
+.wrapper.animated-signup .form-container.sign-up {
+    animation: signup-flip 1s ease-in-out forwards;
+}
+
+@keyframes signup-flip {
+    0% {
+        transform: translateX(0);
+        z-index: 1;
+    }
+
+    50% {
+        transform: translateX(50rem) scale(1.1);
+    }
+
+    100% {
+        transform: translateX(0) rotate(7deg) scale(1);
+    }
+}
+
+.wrapper.animated-signup .form-container.sign-in {
+    transform: rotate(7deg);
+    animation: rotatecard .7s ease-in-out forwards;
+    animation-delay: .3s;
+}
+
+@keyframes rotatecard {
+    0% {
+        transform: rotate(7deg);
+    }
+
+    100% {
+        transform: rotate(0);
+        z-index: 1;
+    }
+}
