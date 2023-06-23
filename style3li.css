@@ -1,0 +1,113 @@
+body{
+	background: url(home/ud1.jpg);
+	font-size: 19px;
+}
+nav {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	margin-bottom: 20px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+}
+
+nav li {
+	margin-right: 20px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+	background-color: #FFA500;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav ul li:last-child a {
+	background-color: #FFA500;
+	color: #333;
+}
+
+nav a.active {
+	background-color: #FFA500;
+}
+
+nav a.active:hover {
+	background-color: #FFA500;
+}
+
+.content {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.content h1 {
+	font-size: 36px;
+	margin-bottom: 20px;
+}
+
+.content h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.content ul {
+	margin-bottom: 20px;
+}
+
+.content ul li {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+
+.content .image {
+	height: 300px;
+	background-color: #eee;
+	margin-bottom: 20px;
+}
+img {
+	max-width: 24%;
+	height: auto;
+  }
+  
+
+  .ZiXuan, .F+, .BaoZaiFan, .ShiGuo, .KaoPanFan, .MiPi, .MiFen, .BaoZi, .Noodles, .Hamburger, .Dishes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+  }
+  
+  .ZiXuan .image, .F+ .image, .BaoZaiFan .image, .ShiGuo .image, .KaoPanFan .image, .MiPi .image, .MiFen .image, .BaoZi .image, .Noodles .image, .Hamburger .image, .Dishes .image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+	background-color: #eee;
+	margin-bottom: 20px;
+  }
+  
+  .ZiXuan_text, .F+_text, .BaoZaiFan_text, .ShiGuo_text, .KaoPanFan_text, .MiPi_text, .MiFen_text, .BaoZi_text, .Noodles_text, .Hamburger_text, .Dishes_text {
+	flex-basis: 100%;
+	margin-top: 10px;
+	flex-direction: column;
+	text-align: center;
+  }
+  
