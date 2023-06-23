@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>八里台一食堂及实习餐厅</title>
+	<link rel="stylesheet" href="style31.css">
+	<link rel="stylesheet" href="style3li.css">
+	<style>.comment-container { display: flex; flex-direction: column; align-items: center; border-radius: 10px; /* 为整个评论区添加圆角 */ } .comment { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; 
+		 width: calc(70% - 20px); 
+		 border-radius: 10px; /* 为每个评论添加圆角 */ } .avatar { width: 50px; height: 50px; border-radius: 50%; } .username { font-size: 16px; margin-top: 5px; } 
+		 .content { font-size: 14px; margin-top: 5px; } .time { font-size: 14px; color: #999; } 
+    </style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="Home.html">主页</a></li>
+			<li><a href="#" class="active">八里台一食堂及实习餐厅</a></li>
+			<li><a href="八里台2.html">八里台二食堂</a></li>
+			<li><a href="八里台3.html" >八里台三食堂</a></li>
+			<li><a href="津南文.html">津南文科食堂</a></li>
+			<li><a href="津南理.html">津南理科食堂</a></li>
+			<li style="float:right"><a href="index.html">登录/退出</a></li>
+		</ul>
+	</nav>
+
+	<div class="content">
+		<h1>八里台一食堂</h1>
+		<p>八里台一食堂是位于南开大学八里台校区的一家食堂。</p>
+		<h2>菜品推荐</h2>
+	</div>
+	<div class="BaoZaiFan">
+		<img src="img1/BrigeXian.jpg">
+		<img src="img1/Fen.jpg">
+		<img src="img1/Fen2.jpg">
+		<img src="img1/fishFen.jpg">
+		<img src="img1/SuanlaFen.jpg">
+		<img src="img1/FenChao.jpg">
+		<div class="BaoZaiFan_text">
+			<p>
+				粉和米线：过桥米线，米粉、炒粉/鱼粉、酸辣粉，适合一人食，南方同学狂喜！</br>
+				爽滑可口，滋味鲜美。无论是汤面还是炒面，都是美食爱好者的最爱。
+			</p>
+		</div>
+	</div>
+	<div class="ShiGuo">
+		<img src="img1/beefNoodle.jpg">
+		<img src="img1/noodle1Ban.jpg">
+		<img src="img1/noodle2.jpg">
+		<img src="img1/noodleBan.jpg">
+		<img src="img1/noodleBan3.jpg">
+		<img src="img1/xihongshinoodle.jpg">
+		<div class="ShiGuo_text">
+			<p>面条专区：汤面拌面各式各样应有尽有。
+			</br>选用优质原料，精心制作而成。每一碗都充满了用心和诚意，让你享受到最纯粹的美味。
+			</br>劲道有嚼头，浓郁的汤底让人回味无穷。宽厚有韧性，口感丰富多样。Q弹有嚼劲
+		</p>
+		</div>
+	</div>
+	<div class="MiPi">
+		<img src="img/MiPi1.jpg">
+		<img src="img/MiPi2.jpg">
+		<img src="img/MiPi3.jpg">
+		<img src="img/MiPi4.jpg">
+		<div class="MiPi_text">
+			<p>
+				米皮：米皮是一种小众又清爽美味的食物，不妨品尝一下叭~
+			</p>
+		</div>
+	</div>
+	<div class="MiPi">
+		<img src="img1/waterMeat.jpg">
+		<img src="img1/Watermeat2.jpg">
+		<div class="MiPi_text">
+			<p>
+				水煮专区：特色水煮肉。麻辣鲜香，口感丰富。让你唇齿留香。
+			</p>
+		</div>
+	</div>
+
+	<div class="comment-container">
+		<div class="comment">
+		  <div class="username-avatar">
+		     <img class="avatar" src="OIP-C.jpg" alt="用户头像">
+		  </div>
+		  <div class="content">请在这里留下评价~</div>
+		  <!-- 在评论容器中添加一个按钮，用于添加新评论 -->
+		  <button onclick="addComment()">添加评论</button>
+		  <script>function addComment() {
+  
+			  // 这里可以添加添加新评论的逻辑，例如弹出一个表单让用户填写评论内容等
+  
+			  const content = prompt('请输入评论内容：');
+  
+			  if (content) {
+  
+				  // 新建comment div
+				const comment = document.createElement('div');
+				  // 设置类名
+				comment.className = 'comment';
+  
+				const avatar = document.createElement('img');
+				  //传入 
+				avatar.src = 'OIP-C.jpg';
+  
+				avatar.className = 'avatar';
+  
+				const username = document.createElement('div');
+  
+				username.textContent = '路过的某不知名NK美食家';
+				username.style.fontSize = 24;
+				username.style.fontWeight = "bold";
+  
+				const contentText = document.createElement('div');
+  
+				contentText.textContent = content;
+  
+				const time = document.createElement('div');
+				time.style.fontSize = "small";
+  
+				time.textContent = '2022-01-01 12:00:00';
+  
+				comment.appendChild(avatar);
+  
+				comment.appendChild(username);
+  
+				comment.appendChild(contentText);
+  
+				comment.appendChild(time);
+  
+				document.querySelector('.comment-container').appendChild(comment);
+  
+			  } else {
+  
+				return false;
+  
+			  }
+  
+			}
+		</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="MiPi">
+	<img src="img/MiPi1.jpg">
+	<img src="img/MiPi2.jpg">
+	<img src="img/MiPi3.jpg">
+	<img src="img/MiPi4.jpg">
+	<div class="MiPi_text">
+		<p>
+			米皮：米皮是一种小众又清爽美味的食物，不妨品尝一下叭~
+		</p>
+	</div>
+</div>
+<div class="MiFen">
+	<img src="img/MiFen1.jpg">
+	<img src="img/MiFen2.jpg">
+	<img src="img/MiFen3.jpg">
+	<div class="MiFen_text">
+		<p>
+			米粉：米粉：分量足，实惠又好吃的桂林米粉！
+		</p>
+	</div>
+</div>
+<div class="BaoZi">
+	<img src="img/BaoZi.jpg">
+	<div class="BaoZi_text">
+		<p>
+			包子铺：鲜肉包，酱肉包，梅干菜包，肉沫茄子包，甚至还有椰奶包，酸奶包，糯米鸡，甜口咸口应有尽有，更适合早八宝宝体质！
+		</p>
+	</div>
+</div>
+<div class="Noodles">
+	<img src="img/Noodles1.jpg">
+	<img src="img/Noodles2.jpg">
+	<img src="img/Noodles3.jpg">
+	<img src="img/Noodles4.jpg">
+	<img src="img/Noodles5.jpg">
+	<div class="Noodles_text">
+		<p>
+			面馆：板面，汤面，鱼粉，甚至还有美味的现煮方便面，好吃又经济实惠！
+		</p>
+	</div>
+</div>
+<div class="Hamburger">
+	<img src="img/Hamburger.jpg">
+	<div class="Hamburger_text">
+		<p>
+			乐克汉堡：FC太贵？没关系，在这里能满足您对西式快餐的一切渴望！没想到不出校也能吃到正宗的美式汉堡，量大肉多太满足了！
+		</p>
+	</div>
+	<div class="Dishes">
+		<img src="img/Dishes1.jpg">
+		<img src="img/Dishes2.jpg">
+		<div class="Dishes_text">
+			<p>
+				奇遇小碗菜：不想吃大锅菜，就来尝尝小碗菜吧！
+			</p>
+		</div>
+		<p>在这里，您可以品尝到各种美食，包括热菜、凉菜、面食、粥、饮料等。我们的食材新鲜，价格实惠，欢迎您的光临！</p>
+	</div>
+</div> -->
